@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuis Hewan Laut 🐠</title>
+
+<body>
+
+<!-- ===== BACKSOUND GELEMBUNG ===== -->
+<audio id="bubbleAudio" loop>
+  <source src="gelembung.mp3" type="audio/mpeg">
+  <source src="gelembung.mp3" type="audio/ogg">
+</audio>
+
+<!-- 🔔 Suara TRING saat kuis selesai -->
+<audio id="finishSound">
+  <source src="audio/ting.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Tombol kontrol sederhana -->
+<button id="toggleSound" aria-pressed="false" style="position: fixed; right: 20px; bottom: 20px; z-index:9999; padding:10px 14px; border-radius:50px; border:none; background:#66ccff; color:#03396c; cursor:pointer;">
+  🔊 Backsound On
+</button>
+
+<script>
+  const audio = document.getElementById('bubbleAudio');
+  const toggle = document.getElementById('toggleSound');
+
+  audio.volume = 0.25;
+
+  function tryAutoPlay() {
+    audio.play().then(() => {
+      toggle.textContent = '🔊 Backsound On';
+      toggle.setAttribute('aria-pressed', 'true');
+    }).catch(() => {
+      toggle.textContent = '🔈 Aktifkan Backsound';
+      toggle.setAttribute('aria-pressed', 'false');
+    });
+  }
+
+  window.addEventListener('load', tryAutoPlay);
+
+  const exploreBtn = document.getElementById('exploreBtn');
+  if (exploreBtn) {
+    exploreBtn.addEventListener('click', () => {
+      audio.play().catch(()=>{});
+      toggle.textContent = '🔊 Backsound On';
+      toggle.setAttribute('aria-pressed', 'true');
+    });
+  }
+
+  toggle.addEventListener('click', () => {
+    if (!audio.paused) {
+      audio.pause();
+      toggle.textContent = '🔇 Backsound Off';
+      toggle.setAttribute('aria-pressed', 'false');
+    } else {
+      audio.play().then(() => {
+        toggle.textContent = '🔊 Backsound On';
+        toggle.setAttribute('aria-pressed', 'true');
+      }).catch(() => {
+        toggle.textContent = '🔈 Klik Explore dulu';
+      });
+    }
+  });
+</script>
+<!-- ===== END BACKSOUND ===== -->
+
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom right, #0099cc, #003366);
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px #001f33;
+  }
+
+  .quiz-box {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .question {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+  }
+
+  .options button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .options button:hover {
+    background-color: #00bcd4;
+    transform: scale(1.05);
+  }
+
+  .result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+
+  footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #cceeff;
+  }
+
+  .bubble {
+    position: absolute;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: rise 10s infinite ease-in;
+  }
+
+  @keyframes rise {
+    from { transform: translateY(0) scale(1); opacity: 1; }
+    to { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+  }
+</style>
+
+<h1>🌊 Kuis Hewan Laut 🐬</h1>
+<div class="quiz-box">
+  <div id="quiz">
+    <div class="question" id="question">Pertanyaan akan muncul di sini</div>
+    <div class="options" id="options"></div>
+  </div>
+  <div class="result" id="result"></div>
+</div>
+
+<footer>© 2025 Kuis Hewan Laut | Dibuat dengan 💙 oleh kamu</footer>
+
+<script>
+  const quizData = [
+    { question: "Hewan laut yang tubuhnya penuh duri tajam dan bisa menggulung dirinya adalah?", options: ["Bulu babi","Cumi-cumi","Hiu","Ubur-ubur"], answer: "Bulu babi" },
+    { question: "Hewan laut apa yang bentuknya seperti bintang?", options: ["Ikan paus","Cumi-cumi","Bintang Laut","Ubur-ubur"], answer: "Bintang Laut" },
+    { question: "Hewan laut yang tubuhnya transparan dan mengandung racun?", options: ["Ikan paus","Cumi-cumi","Hiu","Ubur-ubur"], answer: "Ubur-ubur" },
+    { question: "Hewan laut yang termasuk mamalia tapi hidup di air adalah?", options: ["Ikan paus","Cumi-cumi","Hiu","Ubur-ubur"], answer: "Ikan paus" },
+    { question: "Hewan laut yang suka hidup di dasar laut dan punya capit besar?", options: ["kepiting","Cumi-cumi","Hiu","Ubur-ubur"], answer: "Kepiting" },
+    { question: "Hewan laut manakah yang dikenal bisa menyemprotkan tinta?", options: ["Ikan paus","Cumi-cumi","Hiu","Ubur-ubur"], answer: "Cumi-cumi" },
+    { question: "Hewan laut terbesar di dunia adalah?", options: ["Ikan hiu putih","Ikan paus biru","Lumba-lumba","Ikan pari"], answer: "Ikan paus biru" },
+    { question: "Hewan laut apa yang memiliki cangkang keras dan berjalan menyamping?", options: ["Kepiting","Gurita","Ikan pari","Belut laut"], answer: "Kepiting" },
+    { question: "Hewan laut manakah yang memiliki delapan lengan?", options: ["Gurita","Bintang laut","Cumi-cumi","Kepiting"], answer: "Gurita" },
+    { question: "Bintang laut bernafas menggunakan apa?", options: ["Insang","Kulitnya","Paru-paru","Mulut"], answer: "Kulitnya" },
+  ];
+
+  let currentQuestion = 0;
+  let score = 0;
+
+  const questionEl = document.getElementById("question");
+  const optionsEl = document.getElementById("options");
+  const resultEl = document.getElementById("result");
+
+  function loadQuestion() {
+    const current = quizData[currentQuestion];
+    questionEl.textContent = current.question;
+    optionsEl.innerHTML = "";
+    current.options.forEach((option) => {
+      const button = document.createElement("button");
+      button.textContent = option;
+      button.onclick = () => checkAnswer(option);
+      optionsEl.appendChild(button);
+    });
+  }
+
+  function checkAnswer(selected) {
+    const correct = quizData[currentQuestion].answer;
+    if (selected === correct) score++;
+    currentQuestion++;
+    if (currentQuestion < quizData.length) loadQuestion();
+    else showResult();
+  }
+
+  function showResult() {
+
+    // 🔔 Putar suara TRING
+    document.getElementById("finishSound").play();
+
+    quiz.style.display = "none";
+    resultEl.innerHTML = `🎉 Kamu menjawab benar <b>${score}</b> dari ${quizData.length} pertanyaan!<br><br>
+    <button onclick="location.reload()" style="padding:10px 20px;border:none;border-radius:10px;background:#00bcd4;color:white;cursor:pointer;">Main Lagi 🔁</button>`;
+  }
+
+  for (let i = 0; i < 10; i++) {
+    const bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+    bubble.style.left = Math.random() * 100 + "vw";
+    bubble.style.width =
+      bubble.style.height = Math.random() * 30 + 10 + "px";
+    bubble.style.animationDuration = Math.random() * 5 + 5 + "s";
+    document.body.appendChild(bubble);
+  }
+
+  loadQuestion();
+</script>
+
+</body>
+</html>

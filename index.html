@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocean Park - Sea Adventure</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #eaf7ff;
+      color: #03396c;
+    }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #03396c;
+      padding: 15px 50px;
+      color: white;
+    }
+
+    .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav li {
+      margin-left: 25px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #66ccff;
+    }
+
+    /* HERO */
+    .hero {
+      background: url('foto/bg2.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      background-color: #66ccff;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 1em;
+      color: #03396c;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #fff;
+      transform: scale(1.1);
+    }
+
+    /* CATEGORIES */
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px;
+      background-color: #cce6ff;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0 10px;
+      color: #022b54;
+    }
+
+    .card p {
+      padding: 0 15px;
+      font-size: 0.95em;
+    }
+
+    .read-more {
+      background-color: #a8c9e9;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .read-more:hover {
+      background-color: #66ccff;
+      color: #f9fafc;
+    }
+
+    /* FOUNDATION SECTION */
+    .foundation {
+      background-color: #005b96;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .foundation h2 {
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #022b54;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">🌊 OceanPark</div>
+    <nav>
+      <ul>
+        <li><a href="kelompok.html" class="active">About Us</a></li>
+        <li><a href="quiz.html" class="active">Quiz</a></li>
+        <li><a href="logout.html" class="logout-btn">video</a></li>
+      </nav>
+      </header>
+
+  <section class="hero">
+    <h1>Welcome to OceanPark</h1>
+    <p>Selami keajaiban samudra biru yang menenangkan</p>
+    <button id="exploreBtn">🌊 Explore Now</button>
+  </section>
+
+  <section class="categories">
+    <div class="card">
+      <img src="foto/hiu.jpeg" alt="Hiu">
+      <h3>paus biru</h3>
+      <p>Penguasa laut dalam yang gagah dan misterius.</p>
+      <a href="hiu.html" class="active"><button class="read-more">Read More</a></button>
+    </div>
+    <div class="card">
+      <img src="foto/anjing laut.jpeg" alt="Anjing-Laut">
+      <h3>Anjing Laut</h3>
+      <p>Sahabat laut yang lincah dan penuh keceriaan.</p>
+      <a href="anjing.html" class="active"><button class="read-more">Read More</a></button>
+    </div>
+    <div class="card">
+      <img src="foto/penyu2.jpeg" alt="penyu">
+      <h3>penyu</h3>
+      <p>Keanggunan yang mengajarkan kita tentang kesabaran.</p>
+       <a href="kura.html" class="active"><button class="read-more">Read More</a></button>
+    </div>
+    <div class="card">
+      <img src="foto/lumba.jpeg" alt="lumba-Laut">
+      <h3>Lumba Lumba</h3>
+      <p>Cerita bahagia dari penjuru samudra biru.</p>
+       <a href="lumba.html" class="active"><button class="read-more">Read More</a></button>
+    </div>
+    <div class="card">
+      <img src="foto/orca.jpeg" alt="lumba-Laut">
+      <h3>Orca</h3>
+      <p>Teman dari penjuru samudra biru.</p>
+       <a href="orca.html" class="active"><button class="read-more">Read More</a></button>
+    </div>
+  </section>
+
+  <section class="foundation">
+    <h2>Indahnya Menjaga Keindahan Laut</h2>
+    <p>Setiap tetes air menyimpan kehidupan. Mari jaga keindahan laut agar tetap bernafas untuk generasi mendatang.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Ocean Park | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    // JavaScript Interaktif 🌊
+    document.getElementById("exploreBtn").addEventListener("click", () => {
+      alert("Selamat datang di OceanPark! 🐠 Jelajahi dunia bawah laut!");
+    });
+
+    // Efek hover untuk tombol Read More
+    document.querySelectorAll(".read-more").forEach(btn => {
+      btn.addEventListener("mouseover", () => {
+        btn.style.transform = "scale(1.1)";
+      });
+      btn.addEventListener("mouseout", () => {
+        btn.style.transform = "scale(1)";
+      });
+    });
+  </script>
+</body>
+</html>

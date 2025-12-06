@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelompok 3 Orang</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #84b3e5, #00bcd4);
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .container h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .container p {
+      font-size: 1.1em;
+      opacity: 0.9;
+      margin-bottom: 50px;
+    }
+
+    .team {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      width: 250px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #00e0ff;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.3em;
+      margin-bottom: 8px;
+    }
+
+    .card span {
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌊 Tim Penjelajah Samudra</h1>
+    <p>Bersama menjaga laut biru dan menciptakan masa depan yang lebih bersih.</p>
+
+    <div class="team">
+      <div class="card">
+        <img src="foto/profil1.jpeg" alt="Anggota 1">
+        <h3>Lina Nuraini</h3>
+        <span>Editor & Dokumentasi</span>
+      </div>
+
+      <div class="card">
+        <img src="foto/profil2.jpeg" alt="Anggota 2">
+        <h3>Mega Wati Nurjaya Putri</h3>
+        <span>Streaming</span>
+      </div>
+
+      <div class="card">
+        <img src="foto/profil3.jpeg" alt="Anggota 3">
+        <h3>Sopiawati</h3>
+        <span>Masak & Chill</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

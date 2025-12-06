@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocean Info Cards</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #dff6ff, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      gap: 30px;
+      overflow: hidden;
+    }
+
+    .card {
+      width: 270px;
+      background: white;
+      border-radius: 30px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    /* Bagian atas dengan ilustrasi air laut */
+    .card .top {
+      position: relative;
+      height: 230px;
+      background: linear-gradient(180deg, #0f6ba0, #0abde3);
+      border-radius: 0 0 50% 50%;
+      overflow: hidden;
+    }
+
+    .card .top img {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      opacity: 0.6;
+    }
+
+    /* Konten teks */
+    .card .content {
+      padding: 25px;
+      text-align: left;
+    }
+
+    .card h2 {
+      color: #03396c;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 0.9em;
+      line-height: 1.4em;
+    }
+
+    .card .ocean-text {
+      color: #0099cc;
+      font-weight: bold;
+    }
+
+    /* Tombol panah */
+    .arrow-btn {
+      background: #0abde3;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 1.4em;
+      margin: 15px auto 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 150, 200, 0.4);
+    }
+
+    .arrow-btn:hover {
+      background: #0288c7;
+      transform: scale(1.1);
+    }
+
+    /* Kartu kanan gradasi */
+    .card.blue {
+      background: linear-gradient(180deg, #5cd2e6, #2a93d5);
+      color: white;
+    }
+
+    .card.blue .content h2,
+    .card.blue .content p {
+      color: white;
+    }
+
+    .card.blue .arrow-btn {
+      background: white;
+      color: #0288c7;
+    }
+
+    .card.blue .arrow-btn:hover {
+      background: #b3ecff;
+    }
+
+    /* Dekorasi siluet laut */
+    .ocean-bg {
+      position: fixed;
+      bottom: -20px;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('https://i.imgur.com/pB9LHDY.png') no-repeat center bottom/cover;
+      opacity: 0.2;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="top">
+      <img src="foto/hiu.jpeg" alt="ocean art">
+    </div>
+    <div class="content">
+      <h2>I Believe in the <span class="ocean-text">ocean</span><br>curing all bad moods</h2>
+      <p>Paus biru adalah hewan terbesar di dunia. Hewan ini termasuk mamalia laut yang bernapas dengan paru-paru. Panjang tubuhnya bisa mencapai 30 meter dan beratnya hingga 180 ton.</p>
+    </div>
+   <button onclick="playSound('sound2')" style="background-color:#007bff;color:white;border:none;padding:10px 20px;border-radius:8px;font-size:16px;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,0.2);transition:0.3s;">▶</button>
+</div>
+<script>
+    function playSound(id) {
+      const audio = document.getElementById(id);
+      audio.currentTime = 0; // mulai dari awal setiap kali diklik
+      audio.play();
+    }
+  </script>
+  </div>
+
+  <!-- Card 2 -->
+ <div class="card">
+  <div class="top" style="background: linear-gradient(160deg, #00a6ff, #00f5d4);">
+    <div class="icon">🐠</div>
+     <img src="foto/hiuuuu.jpeg" alt="ocean art">
+  </div>
+  <div class="content">
+    <h2>Hippocampus comes from the Ancient Greek</h2>
+    <p>Paus biru hidup di lautan luas dan makanannya utama adalah krill (sejenis udang kecil).</p>
+    </div>
+    <audio id="sound2" src="audio/hiu.mp3"></audio>
+   <button onclick="playSound('hiu.mp3')" style="background-color:#007bff;color:white;border:none;padding:10px 20px;border-radius:8px;font-size:16px;cursor:pointer;box-shadow:0 4px 6px rgba(0,0,0,0.2);transition:0.3s;">▶</button>
+</div>
+<script>
+    function playSound(id) {
+      const audio = document.getElementById(id);
+      audio.currentTime = 0; // mulai dari awal setiap kali diklik
+      audio.play();
+    }
+  </script>
+</body>
+</html>
